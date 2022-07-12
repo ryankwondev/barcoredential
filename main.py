@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.responses import FileResponse
 import pdf417
 import PIL
+
 app = FastAPI()
 
 
@@ -15,4 +16,4 @@ async def encode(string: str):
     codes = pdf417.encode(string)
     image = pdf417.render_image(codes)
     image.save("image.png")
-    return FileResponse("image.png", media_type="image/png") # Only Image Directory can be used
+    return FileResponse("image.png", media_type="image/png")
