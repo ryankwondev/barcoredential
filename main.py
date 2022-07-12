@@ -16,4 +16,5 @@ async def encode(string: str):
     codes = pdf417.encode(string)
     image = pdf417.render_image(codes)
     image.save("image.png")
-    return FileResponse("image.png", media_type="image/png")
+    # FileResponse("image.png", media_type="image/png")
+    return FileResponse("image.png")
